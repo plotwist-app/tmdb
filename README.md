@@ -1,5 +1,3 @@
-# **TMDB TypeScript Library**
-
 A TypeScript library for interacting with The Movie Database (TMDB) API, offering strongly-typed and modular access to movies, TV shows, and other media.
 
 ---
