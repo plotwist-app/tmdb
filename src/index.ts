@@ -44,5 +44,3 @@ export function TMDB(accessToken: string) {
 
 export * from './models'
 export * from './api'
-
-TMDB('oi').search.multi('Inception', 'en-US')
