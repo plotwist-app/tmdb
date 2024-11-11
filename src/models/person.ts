@@ -1,6 +1,6 @@
-import { WithMediaType } from '../utils/with_media_type'
-import { MovieWithMediaType } from './movie'
-import { TvSerieWithMediaType } from './tv-series'
+import type { WithMediaType } from '../utils/with_media_type'
+import type { MovieWithMediaType } from './movie'
+import type { TvSerieWithMediaType } from './tv-series'
 
 export type Person = {
   id: number

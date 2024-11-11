@@ -1,10 +1,10 @@
-import {
+import type {
   Genre,
   ProductionCompany,
   ProductionCountry,
   SpokenLanguage,
 } from '../utils/common'
-import { WithMediaType } from '../utils/with_media_type'
+import type { WithMediaType } from '../utils/with_media_type'
 
 export type TvSerie = {
   poster_path: string

@@ -1,10 +1,10 @@
-import { axiosClient } from '..'
-import { GetKeywordsResponse } from '../models/keywords'
+import { axiosClient } from "..";
+import type { GetKeywordsResponse } from "../models/keywords";
 
-export const keywords = async (type: 'tv' | 'movie', id: number) => {
-  const { data } = await axiosClient.get<GetKeywordsResponse>(
-    `/${type}/${id}/keywords`,
-  )
+export const keywords = async (type: "tv" | "movie", id: number) => {
+	const { data } = await axiosClient.get<GetKeywordsResponse>(
+		`/${type}/${id}/keywords`,
+	);
 
-  return data.keywords || data.results
-}
+	return data.keywords || data.results;
+};

@@ -1,5 +1,5 @@
-import { MovieWithMediaType, TvSerieWithMediaType } from '.'
-import { MediaType } from '../utils/with_media_type'
+import type { MovieWithMediaType, TvSerieWithMediaType } from '.'
+import type { MediaType } from '../utils/with_media_type'
 
 export type RawMovieCredit = MovieWithMediaType & {
   character: string

@@ -1,10 +1,15 @@
-import { Language, PersonDetails, PersonWithMediaType, axiosClient } from '..'
 import {
-  CombinedCredits,
-  CombinedCreditsResponse,
-} from '../models/combined-credits'
-import { formatCombinedCredit } from '../utils/format-combined-credit'
-import { ListResponse } from '../utils/list-response'
+	type Language,
+	type PersonDetails,
+	type PersonWithMediaType,
+	axiosClient,
+} from "..";
+import type {
+	CombinedCredits,
+	CombinedCreditsResponse,
+} from "../models/combined-credits";
+import { formatCombinedCredit } from "../utils/format-combined-credit";
+import type { ListResponse } from "../utils/list-response";
 
 /*
 |-----------------------------------------------------------------------------
@@ -17,22 +22,22 @@ import { ListResponse } from '../utils/list-response'
 */
 
 type PopularPeopleQueryParams = {
-  language: Language
-  page: number
-}
+	language: Language;
+	page: number;
+};
 
 const popular = async (queryParams: PopularPeopleQueryParams) => {
-  const { data } = await axiosClient.get<ListResponse<PersonWithMediaType>>(
-    '/person/popular',
-    {
-      params: {
-        ...queryParams,
-      },
-    },
-  )
+	const { data } = await axiosClient.get<ListResponse<PersonWithMediaType>>(
+		"/person/popular",
+		{
+			params: {
+				...queryParams,
+			},
+		},
+	);
 
-  return data
-}
+	return data;
+};
 
 /*
 |-----------------------------------------------------------------------------
@@ -45,14 +50,14 @@ const popular = async (queryParams: PopularPeopleQueryParams) => {
 */
 
 const details = async (personId: number, language: Language) => {
-  const { data } = await axiosClient.get<PersonDetails>(`/person/${personId}`, {
-    params: {
-      language,
-    },
-  })
+	const { data } = await axiosClient.get<PersonDetails>(`/person/${personId}`, {
+		params: {
+			language,
+		},
+	});
 
-  return data
-}
+	return data;
+};
 
 /*
 |-----------------------------------------------------------------------------
@@ -65,21 +70,21 @@ const details = async (personId: number, language: Language) => {
 */
 
 const combinedCredits = async (personId: number, language: Language) => {
-  const { data } = await axiosClient.get<CombinedCreditsResponse>(
-    `/person/${personId}/combined_credits`,
-    {
-      params: {
-        language,
-      },
-    },
-  )
+	const { data } = await axiosClient.get<CombinedCreditsResponse>(
+		`/person/${personId}/combined_credits`,
+		{
+			params: {
+				language,
+			},
+		},
+	);
 
-  const formattedResponse: CombinedCredits = {
-    cast: data.cast.map((credit) => formatCombinedCredit(credit)),
-    crew: data.cast.map((credit) => formatCombinedCredit(credit)),
-  }
+	const formattedResponse: CombinedCredits = {
+		cast: data.cast.map((credit) => formatCombinedCredit(credit)),
+		crew: data.cast.map((credit) => formatCombinedCredit(credit)),
+	};
 
-  return formattedResponse
-}
+	return formattedResponse;
+};
 
-export const person = { popular, details, combinedCredits }
+export const person = { popular, details, combinedCredits };

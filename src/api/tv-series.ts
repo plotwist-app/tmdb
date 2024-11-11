@@ -1,7 +1,7 @@
-import { Language } from '../models/language'
+import type { Language } from '../models/language'
 import { axiosClient } from '../index'
-import { TvSerie, TvSerieDetails } from '../models/tv-series'
-import { ListResponse } from '../utils/list-response'
+import type { TvSerie, TvSerieDetails } from '../models/tv-series'
+import type { ListResponse } from '../utils/list-response'
 
 /*
 |-----------------------------------------------------------------------------
@@ -60,14 +60,14 @@ export const discover = async (options: DiscoverTvSeriesOptions) => {
   const { page, language, filters } = options
 
   const { data } = await axiosClient.get<ListResponse<TvSerie>>(
-    `/discover/tv`,
+    '/discover/tv',
     {
       params: {
         page,
         language,
         ...filters,
       },
-    },
+    }
   )
 
   return data
@@ -121,7 +121,7 @@ const list = async (params: ListQueryParams) => {
 const related = async (
   id: number,
   type: 'recommendations' | 'similar',
-  language: Language,
+  language: Language
 ) => {
   const { data } = await axiosClient.get<ListResponse<TvSerie>>(
     `/tv/${id}/${type}`,
@@ -130,11 +130,11 @@ const related = async (
       params: {
         language,
       },
-    },
+    }
   )
 
   return data
 }
 
 export const tv = { details, discover, list, related }
-export { type TvSeriesListType, type DiscoverTvSeriesFilters }
+export type { TvSeriesListType, DiscoverTvSeriesFilters }

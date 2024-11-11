@@ -1,22 +1,22 @@
-import { axiosClient } from '..'
-import { Language } from '../models/language'
-import { SeasonDetails } from '../models/season'
+import { axiosClient } from "..";
+import type { Language } from "../models/language";
+import type { SeasonDetails } from "../models/season";
 
 const details = async (
-  seriesId: number,
-  seasonNumber: number,
-  language: Language,
+	seriesId: number,
+	seasonNumber: number,
+	language: Language,
 ) => {
-  const { data } = await axiosClient.get<SeasonDetails>(
-    `/tv/${seriesId}/season/${seasonNumber}`,
-    {
-      params: {
-        language,
-      },
-    },
-  )
+	const { data } = await axiosClient.get<SeasonDetails>(
+		`/tv/${seriesId}/season/${seasonNumber}`,
+		{
+			params: {
+				language,
+			},
+		},
+	);
 
-  return data
-}
+	return data;
+};
 
-export const season = { details }
+export const season = { details };

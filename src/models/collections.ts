@@ -1,4 +1,4 @@
-import { Movie } from './movie'
+import type { Movie } from './movie'
 
 export type Collection = {
   id: number
