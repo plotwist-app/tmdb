@@ -41,3 +41,6 @@ export function tmdb(key: string) {
     person,
   }
 }
+
+export * from './models'
+export * from './api'
