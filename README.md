@@ -1,14 +1,10 @@
 A TypeScript library for interacting with The Movie Database (TMDB) API, offering strongly-typed and modular access to movies, TV shows, and other media.
 
----
-
 ## **Installation**
 
 ```bash
 npm install @plotwist_app/tmdb
 ```
-
----
 
 ## **Usage**
 
@@ -32,8 +28,6 @@ const tmdb = TMDB("YOUR_TMDB_ACCESS_TOKEN");
   ```typescript
   const results = await search.multi("Inception", "en-US");
   ```
-
----
 
 ## **License**
 
