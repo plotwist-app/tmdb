@@ -17,11 +17,11 @@ import {
 
 export let axiosClient: AxiosInstance
 
-export function tmdb(key: string) {
+export function TMDB(accessToken: string) {
   axiosClient = axios.create({
     baseURL: 'https://api.themoviedb.org/3',
     headers: {
-      Authorization: `Bearer ${key}`,
+      Authorization: `Bearer ${accessToken}`,
     },
   })
 
