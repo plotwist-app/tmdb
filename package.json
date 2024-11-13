@@ -1,6 +1,6 @@
 {
 	"name": "@plotwist_app/tmdb",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"license": "MIT",
 	"dependencies": {
 		"axios": "^1.6.5",
@@ -16,5 +16,10 @@
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
-	"keywords": ["tmdb", "typescript", "node"]
+	"keywords": ["tmdb", "typescript", "node"],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/plotwist-app/tmdb"
+	},
+	"bugs": "https://github.com/plotwist-app/tmdb/issues"
 }
