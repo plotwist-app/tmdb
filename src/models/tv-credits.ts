@@ -1,10 +1,10 @@
 export type TvCredits = {
-  cast: Cast[]
-  crew: Crew[]
+  cast: TvCast[]
+  crew: TvCrew[]
   id: number
 }
 
-export type Cast = {
+export type TvCast = {
   adult: boolean
   backdrop_path?: string
   genre_ids: number[]
@@ -24,7 +24,7 @@ export type Cast = {
   episode_count: number
 }
 
-export type Crew = {
+export type TvCrew = {
   adult: boolean
   backdrop_path?: string
   genre_ids: number[]
