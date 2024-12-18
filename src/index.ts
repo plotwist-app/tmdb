@@ -23,6 +23,7 @@ export function TMDB(accessToken: string) {
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
+    timeout: 30000,
   })
 
   return {
