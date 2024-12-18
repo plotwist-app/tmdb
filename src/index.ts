@@ -1,4 +1,4 @@
-import axios, { type AxiosInstance } from 'axios'
+import axios, { type CreateAxiosDefaults, type AxiosInstance } from 'axios'
 import {
   collections,
   credits,
@@ -17,15 +17,14 @@ import {
 
 export let axiosClient: AxiosInstance
 
-export function TMDB(accessToken: string) {
+export function TMDB(accessToken: string, config: CreateAxiosDefaults) {
   axiosClient = axios.create({
     baseURL: 'https://api.themoviedb.org/3',
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
+    ...config,
   })
-
-  axiosClient.defaults.timeout = 5_000
 
   return {
     collections,
