@@ -23,8 +23,9 @@ export function TMDB(accessToken: string) {
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
-    timeout: 30000,
   })
+
+  axiosClient.defaults.timeout = 15_000
 
   return {
     collections,
