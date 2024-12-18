@@ -25,7 +25,7 @@ export function TMDB(accessToken: string) {
     },
   })
 
-  axiosClient.defaults.timeout = 15_000
+  axiosClient.defaults.timeout = 5_000
 
   return {
     collections,
