@@ -17,7 +17,7 @@ import {
 
 export let axiosClient: AxiosInstance
 
-export function TMDB(accessToken: string, config: CreateAxiosDefaults) {
+export function TMDB(accessToken: string, config?: CreateAxiosDefaults) {
   axiosClient = axios.create({
     baseURL: 'https://api.themoviedb.org/3',
     headers: {
