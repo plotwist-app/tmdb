@@ -13,6 +13,7 @@ import {
   videos,
   watchProviders,
   person,
+  episodes,
 } from './api'
 
 export let axiosClient: AxiosInstance
@@ -40,6 +41,7 @@ export function TMDB(accessToken: string, config?: CreateAxiosDefaults) {
     videos,
     watchProviders,
     person,
+    episodes,
   }
 }
 
