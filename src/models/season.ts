@@ -39,4 +39,5 @@ export type SeasonDetails = {
   id: number
   poster_path: string | null
   season_number: number
+  vote_average: number
 }
