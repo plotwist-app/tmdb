@@ -1,22 +1,38 @@
-import { axiosClient } from "..";
-import type { Language } from "../models/language";
-import type { SeasonDetails } from "../models/season";
+import { axiosClient, type GetVideosResponse } from '..'
+import type { Language } from '../models/language'
+import type { SeasonDetails } from '../models/season'
 
 const details = async (
-	seriesId: number,
-	seasonNumber: number,
-	language: Language,
+  seriesId: number,
+  seasonNumber: number,
+  language: Language
 ) => {
-	const { data } = await axiosClient.get<SeasonDetails>(
-		`/tv/${seriesId}/season/${seasonNumber}`,
-		{
-			params: {
-				language,
-			},
-		},
-	);
+  const { data } = await axiosClient.get<SeasonDetails>(
+    `/tv/${seriesId}/season/${seasonNumber}`,
+    {
+      params: {
+        language,
+      },
+    }
+  )
 
-	return data;
-};
+  return data
+}
 
-export const season = { details };
+const videos = async (seriesId: number, seasonNumber: number) => {
+  const { data } = await axiosClient.get<GetVideosResponse>(
+    `tv/${seriesId}/season/${seasonNumber}/videos`
+  )
+
+  return data
+}
+
+const images = async (seriesId: number, seasonNumber: number) => {
+  const { data } = await axiosClient.get<GetVideosResponse>(
+    `tv/${seriesId}/season/${seasonNumber}/videos`
+  )
+
+  return data
+}
+
+export const season = { details, videos, images }
