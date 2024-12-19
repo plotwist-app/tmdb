@@ -51,7 +51,7 @@ const credits = async (seriesId: number, seasonNumber: number) => {
 
 const watchProviders = async (seriesId: number, seasonNumber: number) => {
   const { data } = await axiosClient.get<WatchProviders>(
-    `/tv/${seriesId}/season/${seasonNumber}/watch-providers`
+    `/tv/${seriesId}/season/${seasonNumber}/watch/providers`
   )
 
   return data
