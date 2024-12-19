@@ -1,4 +1,9 @@
-import { axiosClient, type GetImagesResponse, type GetVideosResponse } from '..'
+import {
+  axiosClient,
+  type Credits,
+  type GetImagesResponse,
+  type GetVideosResponse,
+} from '..'
 import type { Language } from '../models/language'
 import type { SeasonDetails } from '../models/season'
 
@@ -35,4 +40,12 @@ const images = async (seriesId: number, seasonNumber: number) => {
   return data
 }
 
-export const season = { details, videos, images }
+const credits = async (seriesId: number, seasonNumber: number) => {
+  const { data } = await axiosClient.get<Credits>(
+    `/tv/${seriesId}/season/${seasonNumber}/credits`
+  )
+
+  return data
+}
+
+export const season = { details, videos, images, credits }
