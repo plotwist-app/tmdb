@@ -1,5 +1,6 @@
 import {
   axiosClient,
+  type WatchProviders,
   type Credits,
   type GetImagesResponse,
   type GetVideosResponse,
@@ -48,4 +49,12 @@ const credits = async (seriesId: number, seasonNumber: number) => {
   return data
 }
 
-export const season = { details, videos, images, credits }
+const watchProviders = async (seriesId: number, seasonNumber: number) => {
+  const { data } = await axiosClient.get<WatchProviders>(
+    `/tv/${seriesId}/season/${seasonNumber}/watch-providers`
+  )
+
+  return data
+}
+
+export const season = { details, videos, images, credits, watchProviders }
