@@ -35,18 +35,41 @@ const details = async (id: number, language: Language) => {
 
 type DiscoverMovieFilters = Partial<
   Record<
-    | 'with_genres'
+    | 'certification'
+    | 'certification.gte'
+    | 'certification.lte'
+    | 'certification_country'
+    | 'include_adult'
+    | 'include_video'
+    | 'language'
+    | 'page'
+    | 'primary_release_date.gte'
+    | 'primary_release_date.lte'
+    | 'primary_release_year'
+    | 'region'
     | 'release_date.gte'
     | 'release_date.lte'
-    | 'with_original_language'
     | 'sort_by'
-    | 'with_watch_providers'
-    | 'with_keywords'
-    | 'watch_region'
     | 'vote_average.gte'
     | 'vote_average.lte'
-    | 'vote_count.gte',
-    string | null
+    | 'vote_count.gte'
+    | 'watch_region'
+    | 'with_cast'
+    | 'with_companies'
+    | 'with_crew'
+    | 'with_genres'
+    | 'with_keywords'
+    | 'with_original_language'
+    | 'with_people'
+    | 'with_release_type'
+    | 'with_runtime.gte'
+    | 'with_runtime.lte'
+    | 'with_watch_providers'
+    | 'without_companies'
+    | 'without_genres'
+    | 'without_keywords'
+    | 'year',
+    string | number | boolean | null
   >
 >
 
