@@ -1,5 +1,6 @@
 import {
   axiosClient,
+  type Language,
   type Credits,
   type GetImagesResponse,
   type GetVideosResponse,
@@ -45,10 +46,16 @@ const credits = async (
 const details = async (
   seriesId: number,
   seasonNumber: number,
-  episodeNumber: number
+  episodeNumber: number,
+  language: Language
 ) => {
   const { data } = await axiosClient.get<EpisodeDetails>(
-    `/tv/${seriesId}/season/${seasonNumber}/episode/${episodeNumber}`
+    `/tv/${seriesId}/season/${seasonNumber}/episode/${episodeNumber}`,
+    {
+      params: {
+        language,
+      },
+    }
   )
 
   return data
