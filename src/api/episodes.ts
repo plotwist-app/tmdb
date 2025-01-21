@@ -4,6 +4,7 @@ import {
   type GetImagesResponse,
   type GetVideosResponse,
 } from '..'
+import type { EpisodeDetails } from '../models/episodes'
 
 const videos = async (
   seriesId: number,
@@ -41,4 +42,16 @@ const credits = async (
   return data
 }
 
-export const episodes = { videos, images, credits }
+const details = async (
+  seriesId: number,
+  seasonNumber: number,
+  episodeNumber: number
+) => {
+  const { data } = await axiosClient.get<EpisodeDetails>(
+    `/tv/${seriesId}/season/${seasonNumber}/episode/${episodeNumber}`
+  )
+
+  return data
+}
+
+export const episodes = { videos, images, credits, details }
