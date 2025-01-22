@@ -14,4 +14,5 @@ export type GetImagesResponse = {
   logos: Image[]
   posters: Image[]
   profiles: Image[]
+  stills: Image[]
 }
